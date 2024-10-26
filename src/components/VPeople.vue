@@ -17,21 +17,7 @@
     <div class="people-content default-width">
       <div class="categories">
         <div class="categories-heading">Categories</div>
-        <div class="categories-content">
-          <ul>
-            <li class="categories-item"><button>All</button></li>
-
-            <li class="categories-item"><button>Actor</button></li>
-
-            <li class="categories-item">
-              <button>Alete</button>
-            </li>
-
-            <li class="categories-item">
-              <button>Billionaire</button>
-            </li>
-          </ul>
-        </div>
+        <CategoriesItem></CategoriesItem>
       </div>
       <div class="expertsbar">
         <SmallCard></SmallCard>
@@ -41,10 +27,12 @@
 </template>
 <script>
 import SmallCard from "./SmallCard.vue";
+import CategoriesItem from "./CategoriesItem.vue";
 export default {
   name: "VPeople",
   components: {
     SmallCard,
+    CategoriesItem,
   },
 };
 </script>

@@ -1,6 +1,11 @@
 import Vue from "vue";
 import Vuex from "vuex";
-import { getPeople, getSlug, getPeopleLists } from "@/apis/index.js";
+import {
+  getPeople,
+  getSlug,
+  getPeopleLists,
+  getCategories,
+} from "@/apis/index.js";
 
 Vue.use(Vuex);
 const store = new Vuex.Store({
@@ -8,6 +13,7 @@ const store = new Vuex.Store({
     products: [],
     people: "",
     peopleLists: [],
+    categories: [],
   },
   mutations: {
     updateProducts(state, products) {
@@ -18,6 +24,9 @@ const store = new Vuex.Store({
     },
     getPeopleLists(state, peopleLists) {
       state.peopleLists = peopleLists;
+    },
+    getCategories(state, categories) {
+      state.categories = categories;
     },
   },
   getters: {
@@ -37,6 +46,10 @@ const store = new Vuex.Store({
     async getPeopleLists({ commit }) {
       const peopleList = await getPeopleLists();
       commit("getPeopleLists", peopleList);
+    },
+    async getCategories({ commit }) {
+      const categories = await getCategories();
+      commit("getCategories", categories);
     },
   },
 });

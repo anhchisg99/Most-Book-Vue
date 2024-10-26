@@ -392,10 +392,14 @@ a {
 
 .main .people-content {
   display: flex;
+  margin-bottom: 90px;
+  justify-content: center;
+  width: 100%;
 }
 
 .main .people-content .categories {
-  width: 25%;
+  max-width: 25%;
+  flex: 1 0 auto;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 7px;
   padding: 20px;
@@ -440,6 +444,10 @@ a {
 
   /* border: 1px solid red; */
 }
+.expertsbar {
+  flex: 1 0 auto;
+  max-width: 75%;
+}
 
 .expertsbar-list {
   display: flex;
@@ -448,7 +456,8 @@ a {
 }
 
 .expertsbar-list a {
-  width: 33%;
+  max-width: 140px;
+  margin: 15px;
 }
 
 .expertsbar-img {
@@ -477,13 +486,25 @@ a {
 
 .expertsbar-item-text h3 {
   margin-top: 10px;
+
+  font-size: 18px;
+  color: #1c1c1c;
+  margin-bottom: 0;
+  line-height: 120%;
+  padding-bottom: 5px;
 }
 
 .expertsbar-item-text p {
   color: #858585;
   font-size: 15px;
   font-weight: 600;
-  line-height: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.expertsbar-item-text img {
+  width: 20px;
 }
 
 /* item  */

@@ -36,6 +36,11 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 } */
+:root {
+  --blueberry: #4455b4;
+  --gray: #858585;
+  --text-sub: #1c1c1c;
+}
 html {
   box-sizing: border-box;
 }
@@ -54,7 +59,7 @@ body {
 }
 
 .container {
-  max-width: 1280px;
+  /* max-width: 1280px; */
   margin: 0 auto;
   /* border: 1px solid red; */
 }
@@ -99,12 +104,16 @@ body {
   margin: 0 20px;
   position: relative;
 }
+nav ul li a {
+  color: black;
+}
 
 li {
   list-style: none;
   display: inline-block;
   margin: 0 20px;
   position: relative;
+  color: black;
 }
 
 .navbar ul li a {
@@ -116,7 +125,7 @@ li {
 a {
   text-decoration: none;
   /* color:#fff; */
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
 }
 
 .main .introduction {
@@ -153,13 +162,18 @@ a {
   display: inline-block;
   padding: 10px;
   align-items: center;
+  margin-top: 30px;
 }
 
 .main .introduction .introduction-donate a {
   display: flex;
   align-items: center;
 }
-
+.main .introduction .introduction-donate-sub {
+  font-size: 0.7em;
+  margin-top: 10px;
+  color: var(--gray);
+}
 .main .introduction .introduction-donate span {
   display: inline-block;
 }
@@ -203,6 +217,20 @@ a {
   width: 120px;
   height: 120px;
 }
+.card-name {
+  padding-top: 10px;
+  text-transform: none;
+}
+.card-name img {
+  width: 20px;
+  margin-right: 10px;
+}
+.card-book-total {
+  text-transform: none;
+  font-size: 15px;
+  color: var(--gray);
+  padding: 10px;
+}
 
 .card-img img {
   border-radius: inherit;
@@ -230,14 +258,20 @@ a {
   margin-top: 40px;
 }
 
-.experts-list a {
+.experts-list .experts-list-card {
   width: 22%;
 }
 
 .experts {
   background-color: #fafafa;
 }
-
+.experts-list-all {
+  margin-top: 43px;
+}
+.experts-list-all p {
+  font-size: 18px;
+  color: var(--blueberry);
+}
 .experts-list-all a {
   display: flex;
   align-items: center;
@@ -255,18 +289,35 @@ a {
 
   max-width: 580px;
 }
+.faq .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
 
 .faq-heading {
   font-size: 30px;
+  font-family: Bona Nova, Times New Roman, sans-serif;
   line-height: 30px;
+  padding-bottom: 10px;
 }
 
 .faq-sub-heading-1,
 .faq-sub-heading-2 {
+  width: 90%;
+  text-align: left;
   line-height: 22.4px;
+  color: var(--text-sub);
+  opacity: 0.8;
+}
+.faq-sub-heading-2 {
+  margin-bottom: 30px;
 }
 
 .faq-content {
+  width: 100%;
   font-size: 14px;
   line-height: 16.8px;
   font-weight: 500;
@@ -433,6 +484,9 @@ a {
 .info {
   margin-bottom: 80px;
 }
+.author-bio {
+  margin-top: 15px;
+}
 
 .info-header {
   display: flex;
@@ -458,6 +512,7 @@ a {
 
 .info-details {
   max-width: 390px;
+  margin-left: 15px;
 }
 
 .info-details p {
@@ -504,7 +559,15 @@ a {
   flex-wrap: wrap;
   justify-content: space-between;
 }
-
+.bookitem {
+  margin-bottom: 90px;
+}
+.bookitem-img {
+  border-radius: 15px;
+}
+.bookitem-img img {
+  border-radius: inherit;
+}
 .bookitem {
   width: calc(50% - 50px);
   display: flex;
@@ -571,5 +634,9 @@ a {
   font-size: 15px;
   display: block;
   padding: 15px 25px;
+}
+.default-width {
+  max-width: 1280px;
+  margin: 0 auto;
 }
 </style>

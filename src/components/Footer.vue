@@ -22,4 +22,8 @@ export default {
   name: "Footer",
 };
 </script>
-<style lang=""></style>
+<style>
+.footer {
+  /* border: 1px solid red; */
+}
+</style>

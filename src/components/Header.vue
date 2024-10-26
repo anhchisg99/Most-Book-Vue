@@ -1,12 +1,14 @@
 <template lang="">
-  <div class="header">
+  <div class="header default-width">
     <div class="logo">
-      <img src="../assets/logo.svg" alt="" />
+      <router-link to="/">
+        <img src="../assets/logo.svg" alt="" />
+      </router-link>
     </div>
     <nav class="navbar-icons">
       <ul>
-        <li><a href="">People </a></li>
-        <li><a href="">Lists</a></li>
+        <li><router-link to="/people">People</router-link></li>
+        <li><router-link to="/item">Lists</router-link></li>
         <li><a href="">Series</a></li>
         <li><a href="">Summaries</a></li>
       </ul>

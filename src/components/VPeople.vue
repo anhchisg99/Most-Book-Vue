@@ -6,7 +6,7 @@
         Here you'll find all our experts. <br />Feel free to browse around!
       </h2>
     </div>
-    <div class="people-submenu">
+    <div class="people-submenu default-width">
       <div class="items-list">Home > People</div>
       <div class="share-button">
         <a href=""><i class="bx bxl-facebook"></i></a
@@ -14,7 +14,7 @@
         ><a href=""><i class="bx bxl-gmail"></i></a>
       </div>
     </div>
-    <div class="people-content">
+    <div class="people-content default-width">
       <div class="categories">
         <div class="categories-heading">Categories</div>
         <div class="categories-content">
@@ -34,26 +34,18 @@
         </div>
       </div>
       <div class="expertsbar">
-        <ul class="expertsbar-list">
-          <a href="">
-            <li class="expertsbar-item">
-              <div class="expertsbar-img">
-                <img src="../assets/bill-gate.webp" alt="" />
-              </div>
-              <div class="expertsbar-item-text">
-                <h3>Bill Gates</h3>
-                <p>200 Book</p>
-              </div>
-            </li>
-          </a>
-        </ul>
+        <SmallCard></SmallCard>
       </div>
     </div>
   </div>
 </template>
 <script>
+import SmallCard from "./SmallCard.vue";
 export default {
   name: "VPeople",
+  components: {
+    SmallCard,
+  },
 };
 </script>
 <style lang=""></style>

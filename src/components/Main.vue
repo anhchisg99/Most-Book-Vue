@@ -1,6 +1,6 @@
 <template lang="">
   <div class="main">
-    <div class="introduction">
+    <div class="introduction default-width">
       <div class="introduction-heading">
         <p data-label-id="0" data-metatip="true">
           Discover books recommended by<br />the world's most influential
@@ -46,6 +46,9 @@
           <span>Buy us a coffee </span>
         </a>
       </div>
+      <div class="introduction-donate-sub">
+        <p>(100% of the proceeds will go towards caffeinating the team)</p>
+      </div>
       <div class="introduction-img-left">
         <img src="../assets/left-img.webp" alt="" />
       </div>
@@ -56,52 +59,7 @@
     <div class="experts">
       <div class="container">
         <h2 class="experts-heading">Some of our most popular experts</h2>
-        <ul class="experts-list">
-          <a href="">
-            <li class="card">
-              <div class="card-img">
-                <img src="../assets/obama.webp" alt="" />
-              </div>
-              <div class="card-content">
-                <h3 class="card-name">Barack Obama</h3>
-                <p>100 Book</p>
-              </div>
-            </li>
-          </a>
-          <a href="">
-            <li class="card">
-              <div class="card-img">
-                <img src="../assets/obama.webp" alt="" />
-              </div>
-              <div class="card-content">
-                <h3 class="card-name">Barack Obama</h3>
-                <p>100 Book</p>
-              </div>
-            </li>
-          </a>
-          <a href="">
-            <li class="card">
-              <div class="card-img">
-                <img src="../assets/obama.webp" alt="" />
-              </div>
-              <div class="card-content">
-                <h3 class="card-name">Barack Obama</h3>
-                <p>100 Book</p>
-              </div>
-            </li>
-          </a>
-          <a href="">
-            <li class="card">
-              <div class="card-img">
-                <img src="../assets/obama.webp" alt="" />
-              </div>
-              <div class="card-content">
-                <h3 class="card-name">Barack Obama</h3>
-                <p>100 Book</p>
-              </div>
-            </li>
-          </a>
-        </ul>
+        <Card :products="products"></Card>
         <div class="experts-list-all">
           <a href="">
             <p>View All</p>
@@ -112,7 +70,7 @@
     </div>
     <div class="faq">
       <div class="container">
-        <div class="faq-heading">About our little book site...</div>
+        <h2 class="faq-heading">About our little book site...</h2>
         <div class="faq-sub-heading-1">
           Our story is simple: we want to become the best
         </div>
@@ -135,8 +93,25 @@
   </div>
 </template>
 <script>
+import { mapState } from "vuex";
+
+// import { mapState } from "vuex";
+import Card from "./Card.vue";
+
 export default {
   name: "Main",
+  components: {
+    Card,
+  },
+  data() {
+    return {};
+  },
+  computed: {
+    ...mapState(["products"]),
+  },
+  async mounted() {
+    this.$store.dispatch("getProduct");
+  },
 };
 </script>
 <style lang=""></style>

@@ -230,6 +230,12 @@ a {
   font-size: 15px;
   color: var(--gray);
   padding: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.card-book-total img {
+  width: 20px;
 }
 
 .card-img img {

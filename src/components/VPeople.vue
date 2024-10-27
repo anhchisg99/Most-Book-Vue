@@ -20,7 +20,7 @@
         <CategoriesItem :categories="categories"></CategoriesItem>
       </div>
       <div class="expertsbar">
-        <SmallCard :peopleLists="peopleLists"></SmallCard>
+        <SmallCard :peopleBasedOnCategory="peopleBasedOnCategory"></SmallCard>
       </div>
     </div>
   </div>
@@ -57,16 +57,16 @@ export default {
     this.$store.dispatch("getPeopleLists");
   },
 
-  // watch: {
-  //   "$route.params.slug": {
-  //     handler: function (param) {
-  //       this.$store.dispatch("getCategoriesSlug", param);
-  //       // this.$store.dispatch('product/getPerProduct',param)
-  //     },
-  //     deep: true,
-  //     immediate: true,
-  //   },
-  // },
+  watch: {
+    "$route.params.slug": {
+      handler: function (param) {
+        this.$store.dispatch("getCategoriesSlug", param);
+        // this.$store.dispatch('product/getPerProduct',param)
+      },
+      deep: true,
+      immediate: true,
+    },
+  },
 };
 </script>
 <style lang=""></style>

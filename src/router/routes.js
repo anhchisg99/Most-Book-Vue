@@ -4,8 +4,8 @@ import VPeople from "@/components/VPeople.vue";
 // import SmallCard from "@/components/SmallCard.vue";
 export default [
   { path: "/", component: Main },
-  { path: "/people/", component: VPeople },
   { path: "/category/:slug", component: VPeople },
+  // { path: "/people/", component: VPeople },
   // { path: "/category/:slug", component: SmallCard },
   { path: "/:slug", component: VItem },
 ];

@@ -5,6 +5,7 @@ import {
   getSlug,
   getPeopleLists,
   getCategories,
+  getCategoriesSlug,
 } from "@/apis/index.js";
 
 Vue.use(Vuex);
@@ -14,6 +15,7 @@ const store = new Vuex.Store({
     people: "",
     peopleLists: [],
     categories: [],
+    peopleBasedOnCategory: [],
   },
   mutations: {
     updateProducts(state, products) {
@@ -27,6 +29,9 @@ const store = new Vuex.Store({
     },
     getCategories(state, categories) {
       state.categories = categories;
+    },
+    getCategoriesSlug(state, payload) {
+      state.peopleBasedOnCategory = payload.peoples;
     },
   },
   getters: {
@@ -50,6 +55,10 @@ const store = new Vuex.Store({
     async getCategories({ commit }) {
       const categories = await getCategories();
       commit("getCategories", categories);
+    },
+    async getCategoriesSlug({ commit }, payload) {
+      const categories = await getCategoriesSlug(payload);
+      commit("getCategoriesSlug", categories);
     },
   },
 });

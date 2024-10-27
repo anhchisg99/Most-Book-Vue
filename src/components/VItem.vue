@@ -14,7 +14,7 @@
       </div>
       <div class="info-maincontent default-width">
         <div class="info-maincontent-bar">
-          <a href="">242 Recommended</a><a href="">4 Writters</a>
+          <a href="">{{ people.totalBooks }} books</a><a href="">4 Writters</a>
         </div>
         <h2>Books Recommended by {{ people.name }}</h2>
         <div class="styles_submenu"></div>

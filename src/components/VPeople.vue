@@ -17,10 +17,10 @@
     <div class="people-content default-width">
       <div class="categories">
         <div class="categories-heading">Categories</div>
-        <CategoriesItem></CategoriesItem>
+        <CategoriesItem :categories="categories"></CategoriesItem>
       </div>
       <div class="expertsbar">
-        <SmallCard></SmallCard>
+        <SmallCard :peopleLists="myValue"></SmallCard>
       </div>
     </div>
   </div>
@@ -28,11 +28,45 @@
 <script>
 import SmallCard from "./SmallCard.vue";
 import CategoriesItem from "./CategoriesItem.vue";
+import { mapState } from "vuex";
 export default {
   name: "VPeople",
   components: {
     SmallCard,
     CategoriesItem,
+  },
+  data() {
+    return {
+      // peoples: [],
+    };
+  },
+  computed: {
+    myValue() {
+      if (!this.$route.params.slug) {
+        console.log("test 2");
+        return this.peopleLists;
+      } else {
+        return this.peopleBasedOnCategory;
+      }
+    },
+    ...mapState(["categories", "peopleLists", "peopleBasedOnCategory"]),
+  },
+  async mounted() {
+    console.log(`router ${this.$route.params.slug}`);
+    this.$store.dispatch("getCategories");
+    this.$store.dispatch("getPeopleLists");
+  },
+
+  watch: {
+    "$route.params.slug": {
+      handler: function (param) {
+        if (this.$route.params.slug)
+          this.$store.dispatch("getCategoriesSlug", param);
+        // this.$store.dispatch('product/getPerProduct',param)
+      },
+      deep: true,
+      immediate: true,
+    },
   },
 };
 </script>

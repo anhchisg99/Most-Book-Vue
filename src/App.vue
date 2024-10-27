@@ -417,7 +417,10 @@ a {
 .main .people-content .categories {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  /* justify-content: center; */
+  position: sticky;
+  top: 10px;
+  height: fit-content;
 }
 
 .main .people-content .categories-content ul {
@@ -591,8 +594,11 @@ a {
 }
 .bookitem-img {
   border-radius: 15px;
+  width: 120px;
+  height: 178px;
 }
 .bookitem-img img {
+  max-width: 100%;
   border-radius: inherit;
 }
 .bookitem {

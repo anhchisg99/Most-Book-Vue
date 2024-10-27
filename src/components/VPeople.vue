@@ -17,7 +17,7 @@
     <div class="people-content default-width">
       <div class="categories">
         <div class="categories-heading">Categories</div>
-        <CategoriesItem :categories="categories"></CategoriesItem>
+        <CategoriesItem :categories="getAllFirst"></CategoriesItem>
       </div>
       <div class="expertsbar">
         <SmallCard :peopleBasedOnCategory="peopleBasedOnCategory"></SmallCard>
@@ -28,7 +28,7 @@
 <script>
 import SmallCard from "./SmallCard.vue";
 import CategoriesItem from "./CategoriesItem.vue";
-import { mapState } from "vuex";
+import { mapGetters, mapState } from "vuex";
 export default {
   name: "VPeople",
   components: {
@@ -50,6 +50,7 @@ export default {
     //   }
     // },
     ...mapState(["categories", "peopleLists", "peopleBasedOnCategory"]),
+    ...mapGetters(["getAllFirst"]),
   },
   async mounted() {
     console.log(`router ${this.$route.params.slug}`);

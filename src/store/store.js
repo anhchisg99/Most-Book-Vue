@@ -17,6 +17,19 @@ const store = new Vuex.Store({
     categories: [],
     peopleBasedOnCategory: [],
   },
+  getters: {
+    getAllFirst(state) {
+      const newArr = [];
+      state.categories.forEach((element) => {
+        if (element.name !== "all") {
+          newArr.push(element);
+        } else {
+          newArr.unshift(element);
+        }
+      });
+      return newArr;
+    },
+  },
   mutations: {
     updateProducts(state, products) {
       state.products = products;
@@ -34,9 +47,7 @@ const store = new Vuex.Store({
       state.peopleBasedOnCategory = payload.peoples;
     },
   },
-  getters: {
-    // saleProduct: "",
-  },
+
   actions: {
     async getProduct({ commit }) {
       const data = await getPeople();

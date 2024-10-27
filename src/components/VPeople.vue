@@ -20,7 +20,7 @@
         <CategoriesItem :categories="categories"></CategoriesItem>
       </div>
       <div class="expertsbar">
-        <SmallCard :peopleLists="myValue"></SmallCard>
+        <SmallCard :peopleLists="peopleLists"></SmallCard>
       </div>
     </div>
   </div>
@@ -41,14 +41,14 @@ export default {
     };
   },
   computed: {
-    myValue() {
-      if (!this.$route.params.slug) {
-        console.log("test 2");
-        return this.peopleLists;
-      } else {
-        return this.peopleBasedOnCategory;
-      }
-    },
+    // myValue() {
+    //   if (!this.$route.params.slug) {
+    //     console.log("test 2");
+    //     return this.peopleLists;
+    //   } else {
+    //     return this.peopleBasedOnCategory;
+    //   }
+    // },
     ...mapState(["categories", "peopleLists", "peopleBasedOnCategory"]),
   },
   async mounted() {
@@ -57,17 +57,16 @@ export default {
     this.$store.dispatch("getPeopleLists");
   },
 
-  watch: {
-    "$route.params.slug": {
-      handler: function (param) {
-        if (this.$route.params.slug)
-          this.$store.dispatch("getCategoriesSlug", param);
-        // this.$store.dispatch('product/getPerProduct',param)
-      },
-      deep: true,
-      immediate: true,
-    },
-  },
+  // watch: {
+  //   "$route.params.slug": {
+  //     handler: function (param) {
+  //       this.$store.dispatch("getCategoriesSlug", param);
+  //       // this.$store.dispatch('product/getPerProduct',param)
+  //     },
+  //     deep: true,
+  //     immediate: true,
+  //   },
+  // },
 };
 </script>
 <style lang=""></style>

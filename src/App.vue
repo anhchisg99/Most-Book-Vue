@@ -426,11 +426,13 @@ a {
 .main .people-content .categories-content ul {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  font-weight: 400;
+  /* gap: 10px; */
 }
 
 .categories-item {
-  margin: 0px;
+  margin: 7px 0px;
+  line-height: 1.8em;
 }
 
 .categories-item button {

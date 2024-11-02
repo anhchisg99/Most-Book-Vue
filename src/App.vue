@@ -674,4 +674,101 @@ a {
   max-width: 1280px;
   margin: 0 auto;
 }
+/* search page */
+.searchpage {
+  display: flex;
+  /* flex-direction: column; */
+}
+
+.search-categories {
+  width: 25%;
+  /* border: 1px solid red; */
+}
+
+.booksbar {
+  width: 75%;
+  padding-left: 30px;
+  /* border: 1px solid red; */
+}
+
+.search-heading h1 {
+  font-size: 35px;
+  font-family: Raleway, Helvetica, arial, sans-serif;
+  line-height: 120%;
+  color: #1c1c1c;
+  letter-spacing: -0.02em;
+  padding: 70px 0 30px 0;
+  font-weight: 600;
+}
+
+.search-heading span {
+  font-style: normal;
+}
+
+.search-categories-main {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  padding: 20px 24px;
+  position: sticky;
+  top: 20px;
+  border: 1px solid blue;
+}
+
+.categories-heading em {
+  font-size: 17px;
+  font-weight: 700;
+  display: block;
+  padding: 0 0 6px;
+}
+
+.categories-content ul {
+  display: flex;
+  flex-direction: column;
+}
+
+.categories-content li {
+  margin: 4px 0;
+  font-weight: 600;
+}
+
+.booksbar-heading p {
+  font-size: 25px;
+  font-family: Bona Nova, Times New Roman, sans-serif;
+  padding-bottom: 30px;
+}
+
+.book-search-result-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0 0 30px;
+}
+
+.book-search-result-container img {
+  border-radius: 15px;
+  width: 115px;
+  height: 158px;
+  opacity: 0.8;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.book-search-result-text {
+  padding-left: 10px;
+}
+
+.book-search-result-text h3 {
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.book-search-result-text h4 {
+  font-size: 15px;
+  color: #858585;
+  padding-top: 7px;
+  font-weight: 600;
+}
 </style>

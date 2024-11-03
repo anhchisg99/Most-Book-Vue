@@ -13,7 +13,7 @@
         <p class="bookitem-source">
           {{ book.source }}
         </p>
-        <button class="bookitem-btn">
+        <button class="bookitem-btn" @click="redirectToTiki(book.name)">
           <span>View on Tiki</span>
         </button>
       </div>
@@ -24,6 +24,11 @@
 export default {
   name: "BookItem",
   props: ["books"],
+  methods: {
+    redirectToTiki(source) {
+      window.open(`https://tiki.vn/search?q=${source}`, "_blank");
+    },
+  },
 };
 </script>
 <style lang=""></style>

@@ -15,13 +15,43 @@
     </nav>
     <div class="searchbar">
       <i class="bx bx-search"></i>
-      <input type="text" name="" id="" placeholder="Search books" />
+      <input
+        type="text"
+        name=""
+        v-on:keyup.enter="onEnter"
+        v-model="search"
+        placeholder="Search books"
+      />
     </div>
   </div>
 </template>
 <script>
 export default {
   name: "Header",
+  data() {
+    return {
+      search: "",
+    };
+  },
+  computed: {
+    filterSearch() {
+      return 2;
+    },
+  },
+  methods: {
+    isWhitespaceString(str) {
+      return !str.replace(/\s/g, "").length;
+    },
+    onEnter() {
+      const isVoid = this.isWhitespaceString(this.search);
+      if (isVoid) {
+        return;
+      } else {
+        this.$router.push({ path: "/search" });
+        this.$store.dispatch("searchPeople", this.search);
+      }
+    },
+  },
 };
 </script>
 <style lang=""></style>

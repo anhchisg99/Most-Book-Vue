@@ -15,11 +15,15 @@ async function getSlug(slug) {
 async function getPeopleLists() {
   const resp = await fetch(`${peopleUrl}lists`);
   const data = resp.json();
+  console.log(`getSpecific ${data}`);
+
   return data;
 }
 async function getCategories() {
   const resp = await fetch(`${categoryUrl}`);
   const data = resp.json();
+  console.log(`getSpecific ${data}`);
+
   return data;
 }
 async function getCategoriesSlug(slug) {
@@ -28,4 +32,18 @@ async function getCategoriesSlug(slug) {
   console.log(`getSpecific ${data.peoples}`);
   return data;
 }
-export { getPeople, getSlug, getPeopleLists, getCategories, getCategoriesSlug };
+async function searchPeople(search) {
+  const resp = await fetch(`${peopleUrl}search?q=${search}`);
+  // console.log(resp);
+  const data = resp.json();
+  console.log(`getSpecific ${data.people}`);
+  return data;
+}
+export {
+  getPeople,
+  getSlug,
+  getPeopleLists,
+  getCategories,
+  getCategoriesSlug,
+  searchPeople,
+};

@@ -996,4 +996,20 @@ a {
   font-weight: 400;
   opacity: 0.5;
 }
+.book-summaries {
+}
+.book-summaries-heading {
+  font-weight: 700;
+  font-size: 2.5rem;
+  line-height: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.book-summaries-content {
+  white-space: pre-line;
+  opacity: 0.6;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  font-weight: 400;
+}
 </style>

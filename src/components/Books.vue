@@ -19,17 +19,23 @@
         </div>
       </div>
       <div class="no-book" v-else>no book</div>
-      <div class="book-summaries"></div>
+      <BooksSummaries
+        :source="{ summary: specificBook.summaries, title: specificBook.title }"
+      ></BooksSummaries>
     </div>
   </div>
 </template>
 <script>
 import { mapState } from "vuex";
+import BooksSummaries from "./BooksSummaries.vue";
 
 export default {
   name: "Books",
   data() {
     return {};
+  },
+  components: {
+    BooksSummaries,
   },
   computed: {
     ...mapState(["specificBook"]),

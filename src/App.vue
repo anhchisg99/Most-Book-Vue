@@ -783,6 +783,7 @@ a {
   background: linear-gradient(rgb(251, 40, 255), rgb(83, 63, 209));
   width: 100% !important;
   padding: 20;
+  cursor: pointer;
 }
 
 .bookitem-btn span {

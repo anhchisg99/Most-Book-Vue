@@ -7,6 +7,8 @@ import {
   getCategories,
   getCategoriesSlug,
   searchPeople,
+  getAllBooks,
+  getSpecificBook,
 } from "@/apis/index.js";
 
 Vue.use(Vuex);
@@ -18,6 +20,8 @@ const store = new Vuex.Store({
     categories: [],
     peopleBasedOnCategory: [],
     searchResult: [],
+    books: [],
+    specificBook: "",
   },
   getters: {
     getAllFirst(state) {
@@ -51,6 +55,12 @@ const store = new Vuex.Store({
     searchPeople(state, payload) {
       state.searchResult = payload.people;
     },
+    getAllBooks(state, payload) {
+      state.books = payload.books;
+    },
+    getSpecificBook(state, payload) {
+      state.specificBook = payload;
+    },
   },
 
   actions: {
@@ -79,6 +89,14 @@ const store = new Vuex.Store({
     async searchPeople({ commit }, payload) {
       const people = await searchPeople(payload);
       commit("searchPeople", people);
+    },
+    async getAllBooks({ commit }) {
+      const books = await getAllBooks();
+      commit("getAllBooks", books);
+    },
+    async getSpecificBook({ commit }, payload) {
+      const books = await getSpecificBook(payload);
+      commit("getSpecificBook", books);
     },
   },
 });

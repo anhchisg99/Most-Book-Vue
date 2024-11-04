@@ -10,7 +10,8 @@
         <li><router-link to="/category/all">People</router-link></li>
         <li><router-link to="/item">Lists</router-link></li>
         <li><a href="">Series</a></li>
-        <li><a href="">Summaries</a></li>
+        <!-- <li><a href="">Summaries</a></li> -->
+        <li><router-link to="/summaries">Summaries</router-link></li>
       </ul>
     </nav>
     <div class="searchbar">

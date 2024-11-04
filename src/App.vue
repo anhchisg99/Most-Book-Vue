@@ -478,21 +478,21 @@ a {
 }
 
 /* people */
-.main .people-heading {
+.people-heading {
   text-align: center;
   color: #1c1c1c;
   /* border: 1px solid red; */
   padding: 30px;
 }
 
-.main .people-heading h1 {
+.people-heading h1 {
   font-size: 50px;
   letter-spacing: -1px;
   line-height: 60px;
   font-family: "Bona Nova";
 }
 
-.main .people-heading h2 {
+.people-heading h2 {
   font-size: 18px;
   font-weight: 600;
   line-height: 25.2px;
@@ -908,5 +908,92 @@ a {
   width: 50%;
   margin: 0px;
   padding: 0px;
+}
+/* summaries */
+
+.summaries-content {
+  max-width: 1280px;
+  margin: 0 auto 30px;
+  border: 1px solid #f6f6f6;
+  background-color: #fcfcfc;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  padding: 30px 40px;
+}
+
+.summaries-content ul {
+  display: flex;
+  flex-direction: row;
+  /* flex-wrap: wrap; */
+  /* border: 1px solid red; */
+  /* align-items: center; */
+  justify-content: space-around;
+}
+
+.summaries-content ul li {
+  width: 33, 333%;
+
+  /* border: 1px solid red; */
+}
+
+.summaries-content ul li div {
+  background: none;
+  border: 0;
+  height: auto;
+  margin-left: 0;
+  padding: 0;
+  text-align: left;
+  color: #4455b4;
+  font-weight: 400;
+  font-size: 16px;
+}
+/* book */
+.book-info {
+  width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  /* border: 1px solid red; */
+  margin-top: 3.5rem;
+  margin-bottom: 3.5rem;
+}
+
+.book-info {
+}
+
+.book-info_img {
+  min-width: 200px;
+  height: 340px;
+  border-radius: 5px;
+  margin-right: 50px;
+}
+
+.book-info_img img {
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  object-fit: cover;
+}
+
+.book-info_content {
+}
+
+.book-info_content h2 {
+  font-size: 1.25em;
+  line-height: 1.75em;
+  margin-bottom: 1em;
+}
+
+.book-info_content-heading {
+  font-size: 3rem;
+  line-height: 1;
+  margin-bottom: 2rem;
+}
+
+.book-info_content-description {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  font-weight: 400;
+  opacity: 0.5;
 }
 </style>

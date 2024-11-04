@@ -1,5 +1,6 @@
 const peopleUrl = "http://localhost:3000/people/";
 const categoryUrl = "http://localhost:3000/categories/";
+const bookUrl = "http://localhost:3000/book/";
 async function getPeople() {
   // const url = "http://localhost:3000/people/";
   const resp = await fetch(peopleUrl);
@@ -39,6 +40,20 @@ async function searchPeople(search) {
   console.log(`getSpecific ${data.people}`);
   return data;
 }
+async function getAllBooks() {
+  const resp = await fetch(`${bookUrl}`);
+  // console.log(resp);
+  const data = resp.json();
+
+  return data;
+}
+async function getSpecificBook(slug) {
+  const resp = await fetch(`${bookUrl}/${slug}`);
+  // console.log(resp);
+  const data = resp.json();
+
+  return data;
+}
 export {
   getPeople,
   getSlug,
@@ -46,4 +61,6 @@ export {
   getCategories,
   getCategoriesSlug,
   searchPeople,
+  getAllBooks,
+  getSpecificBook,
 };

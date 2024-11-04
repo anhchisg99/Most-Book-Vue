@@ -1,11 +1,6 @@
 <template lang="">
   <div class="main">
-    <div class="people-heading">
-      <h1>People</h1>
-      <h2>
-        Here you'll find all our experts. <br />Feel free to browse around!
-      </h2>
-    </div>
+    <CommonHeader :header="header" :describe="describe"></CommonHeader>
     <div class="people-submenu default-width">
       <div class="items-list">Home > People</div>
       <div class="share-button">
@@ -26,6 +21,7 @@
   </div>
 </template>
 <script>
+import CommonHeader from "./CommonHeader.vue";
 import SmallCard from "./SmallCard.vue";
 import CategoriesItem from "./CategoriesItem.vue";
 import { mapGetters, mapState } from "vuex";
@@ -34,10 +30,16 @@ export default {
   components: {
     SmallCard,
     CategoriesItem,
+    CommonHeader,
   },
   data() {
     return {
       // peoples: [],
+      header: "People",
+      describe: [
+        "Here you'll find all our experts.",
+        "Feel free to browse around!",
+      ],
     };
   },
   computed: {

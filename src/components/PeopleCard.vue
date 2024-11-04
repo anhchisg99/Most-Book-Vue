@@ -1,5 +1,5 @@
 <template lang="">
-  <router-link :to="'/' + people.slug">
+  <router-link v-if="people" :to="'/' + people.slug">
     <li class="expertsbar-item">
       <div class="expertsbar-img">
         <img :src="people.img" alt="" />
